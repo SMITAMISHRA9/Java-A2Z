@@ -1,0 +1,152 @@
+N **-----** INTERCHANGE OF PUBLIC/STATIC/VOID/MAIN **-----**
+
+=======INPUT=======(CORRECT CODE)
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}
+------OUTPUT------
+Hello World
+
+
+
+=======INPUT======(SWAPPING PUBLIC TO STATIC)
+public class Main {
+  static public void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}
+------OUTPUT------(NO EFFECT)
+Hello World
+
+
+
+======INPUT======(SWAPPING PUBLIC TO VOID)
+public class Main {
+  static void public main(String[] args) {
+    System.out.println("Hello World");
+  }
+}
+------OUTPUT------(3 ERRORS)
+1.<identifier> excepted
+2.'(' expected
+3.invalid method declaration,return type required
+
+
+
+=======INPUT=======(SWAPPING PUBLIC TO MAIN)
+public class Main {
+  static void main public(String[] args) {
+    System.out.println("Hello World");
+  }
+}
+------OUTPUT------(2 ERRORS)
+1.'(' expected
+2.illegal start of type(when we misplaced)
+
+
+
+
+======INPUT======(WITHOUT PUBLIC)
+public class Main {
+  static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}
+------OUTPUT------
+=> The program compiled sucessfully, but main class was not found.
+	Main class should contain method: public static void main(String[] args)
+
+
+
+
+======INPUT======(SWAPPING STATIC TO VOID)
+public class Main {
+  public void static main(String[] args) {
+    System.out.println("Hello World");
+  }
+}
+------OUTPUT------(3 ERRORS)
+1.<identifier> excepted
+2.'(' expected
+3.invalid method declaration,return type required
+
+
+
+
+======INPUT======(SWAPPING STATIC TO MAIN)
+public class Main {
+  public void main static(String[] args) {
+    System.out.println("Hello World");
+  }
+}
+------OUTPUT------(2 ERRORS)
+1.'(' expected
+2.illegal start of type(when we misplaced)
+
+
+
+
+
+======INPUT======(WITHOUT STATIC)
+public class Main {
+  public void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}
+------OUTPUT------
+=> The program compiled sucessfully, but main class was not found.
+	Main class should contain method: public static void main(String[] args)
+
+
+
+
+======INPUT======(SWAPPING VOID TO MAIN)
+public class Main {
+  public void static main(String[] args) {
+    System.out.println("Hello World");
+  }
+}
+------OUTPUT------(3 ERRORS)
+1.<identifier> excepted
+2.<identifier> expected
+
+
+
+
+
+======INPUT======(WITHOUT VOID)
+public class Main {
+  public static main(String[] args) {
+    System.out.println("Hello World");
+  }
+}
+------OUTPUT------(1 ERROR)
+1.invalid method declaration,return type required
+
+
+
+
+
+======INPUT======(WITHOUT MAIN)
+public class Main {
+  public void static (String[] args) {
+    System.out.println("Hello World");
+  }
+}
+------OUTPUT------(1 ERROR)
+1.<identifier> excepted
+
+
+
+
+**------**Strings[] args**------**
+======INPUT======(String TO string)
+public class Main {
+  public static void main(string[] args) {
+    System.out.println("Hello World");
+  }
+}
+------OUTPUT------(1 ERROR)
+1.cannot find symbol(becoz 'String' is a keyword)

@@ -1,0 +1,38 @@
+**------**HAVING TWO CLASSES IN SAME FILE AND BOTH CLASSES HAVE MAIN METHOD **------**
+
+=======INPUT======
+class HelloWorld1 {
+    public static void main(String[] args) {
+        System.out.println("Hello, World1!");
+    }
+}
+class HelloWorld2 {
+    public static void main(String[] args) {
+        System.out.println("Hello, World2!");
+    }
+}
+------OUTPUT------(Conclusion: Second Class Gets Ignored By Compiler, First Class Gets Priority)
+Hello, World1!
+
+
+
+
+
+**------**2 main() METHOD INSIDE ONE CLASS**------**
+======INPUT======
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+   public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+ 
+  
+}
+------OUTPUT------(1 ERROR)
+1. method main(String[]) is already defined in class Main
+
+
+
+
